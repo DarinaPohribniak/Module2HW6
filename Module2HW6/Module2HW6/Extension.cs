@@ -7,19 +7,19 @@ namespace Module2HW6
         public static void IsVehiclePrice(this AutomaticTransmissionVehicle[] vehicles, decimal price)
         {
             int i = 0;
-            var gh = new bool[vehicles.Length];
+            var containTrue = new bool[vehicles.Length];
             foreach (var vehicle in vehicles)
             {
                 if (vehicle.Price == price)
                 {
                     vehicle.Print();
                     vehicle.Drive();
-                    gh[i] = true;
+                    containTrue[i] = true;
                     break;
                 }
             }
 
-            if (!gh.Contains(true))
+            if (!containTrue.Contains(true))
             {
                 throw new ArgumentException("There are no vehicles at this price for sale.");
             }
